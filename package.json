@@ -1,0 +1,66 @@
+{
+  "name": "deepwaterlaudo-3.0-testeautomatizadofrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:rodar": "cypress run",
+    "cy:report": "node ./cypress/report.js",
+    "cypress:open": "cypress open",
+    "test:chrome": "cypress run --browser chrome --no-exit",
+    "clean_reports": "rm -rf cypress/cucumber-json/*",
+    "clean:report": "rimraf mochawesome-report",
+    "cypress:report": "cypress run --reporter mochawesome && open ./mochawesome-report/mochawesome.html",
+    "postcypress:run": "node ./cypress/support/multiple-cucumber-html-reporter.js",
+    "headless": "cypress run && node ./cypress/support/multiple-cucumber-html-reporter.js",
+    "cy:ci": "cypress run --env=configFile=$env",
+    "cypress:tags": "cypress run -e TAGS='@login_test'",
+    "cy:verify": "cypress verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://wellingtonjunior@bitbucket.org/dasa_desenv/deepwaterlaudo-3.0-testeautomatizadofrontend.git"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/support/steps",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".json"
+    }
+  },
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/dasa_desenv/deepwaterlaudo-3.0-testeautomatizadofrontend/issues"
+  },
+  "homepage": "https://bitbucket.org/dasa_desenv/deepwaterlaudo-3.0-testeautomatizadofrontend#readme",
+  "dependencies": {
+    "cucumber": "6.0.7",
+    "cypress-downloadfile": "^1.2.1",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-xpath": "^1.4.0",
+    "jimp": "^0.16.1",
+    "mocha": "^9.2.0",
+    "mochawesome": "^7.0.1",
+    "rimraf": "^2.6.2",
+    "standard": "^16.0.4",
+    "tesseract.js": "^2.1.4",
+    "tsify": "^5.0.4",
+    "typescript": "^4.6.2"
+  },
+  "devDependencies": {
+    "cypress": "9.4.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "multiple-cucumber-html-reporter": "^1.19.0",
+    "webpack": "^5.70.0"
+  }
+}

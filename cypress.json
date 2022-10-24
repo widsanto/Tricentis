@@ -1,0 +1,8 @@
+{
+  "video": false,
+  "experimentalSessionSupport": true,
+  "defaultCommandTimeout": 60000,
+  "supportFile": "cypress/support/index.js",
+    "viewportWidth": 1280,
+    "viewportHeight": 1280
+}
